@@ -5,7 +5,7 @@ sidebarTitle: Update Agent
 
 **PUT `/api/projects/{project_name}/agents/{agent_name}`**
 
-This API endpoint updates an agent using the `PUT` method.
+This API endpoint updates an agent or creates it if it doesn't exist using the `PUT` method.
 
 <Tip>
 Learn more about agents and the available parameters following [this doc page](/mindsdb_sql/agents/agent).
@@ -23,14 +23,13 @@ Defines the agent name.
 
 ### Body
 
-<ParamField body='name' type='string'>
+<ParamField body='agent.name' type='string'>
 Name of the agent.
 </ParamField>
 
-<ParamField body='model' type='string'>
+<ParamField body='agent.model' type='object'>
 Stores parameters of the model, including `provider`, `model_name`, and `api_key`.
 </ParamField>
-
 <ParamField body='data' type='string'>
 Stores data connected to an agent, including `tables` and `knowledge_bases`.
 </ParamField>

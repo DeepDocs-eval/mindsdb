@@ -126,9 +126,10 @@ Now you can use your Google Analytics data like this:
 * updating one conversion event:
 
     ```sql
+    ```sql
     UPDATE my_ga.conversion_events
-    SET countingMethod = 1,
-    WHERE name = '<mindsdb_event_name>';
+    SET countingMethod = 1
+    WHERE event_name = '<mindsdb_event_name>';
     ```
 
 * deleting one conversion event:

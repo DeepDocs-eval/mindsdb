@@ -26,15 +26,12 @@ MindsDB enables you to save predictions into a view or a table or download as a 
 After creating the model, you can save the prediction results into a view.
 
 ```sql
-CREATE VIEW review_sentiment (
-
+CREATE VIEW review_sentiment AS
     -- querying for predictions
     SELECT input.product_name, input.review, output.sentiment
     FROM mysql_demo_db.amazon_reviews AS input
     JOIN sentiment_classifier AS output
-    LIMIT 10
-
-);
+    LIMIT 10;
 ```
 
 Now the `review_sentiment` view stores sentiment predictions made for all customer reviews.

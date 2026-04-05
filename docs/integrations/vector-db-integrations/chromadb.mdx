@@ -27,7 +27,7 @@ WITH ENGINE = 'chromadb'
 PARAMETERS = {
     "host": "YOUR_HOST",
     "port": YOUR_PORT,
-    "distance": "l2/cosine/ip" -- optional, default is cosine
+    "distance": "cosine" -- optional, default is cosine
 }
 ```
 
@@ -59,7 +59,7 @@ Now, you can use the established connection to create a collection (or table in 
 
 ```sql
 CREATE TABLE chromadb_datasource.test_embeddings (
-    SELECT embeddings,'{"source": "fda"}' as metadata
+    SELECT id, content, embeddings, '{"source": "fda"}' as metadata
     FROM mysql_datasource.test_embeddings
 );
 ```

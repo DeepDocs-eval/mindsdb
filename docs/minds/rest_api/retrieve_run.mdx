@@ -1,6 +1,6 @@
 ---
-title: Retrieve Mind
-sidebarTitle: Retrieve Mind
+title: Retrieve Run
+sidebarTitle: Retrieve Run
 ---
 
 This API endpoint retrieves a Run using the `GET` method.
@@ -150,8 +150,8 @@ client = OpenAI(
     base_url='https://mdb.ai/'
 )
 
-runs = client.beta.threads.runs.list("thread_abc123")
-print(runs)
+run = client.beta.threads.runs.retrieve("thread_abc123", "mdb_run_8b425f3bf0a04ca584ad11106d37330c")
+print(run)
 ```
 
 ```js Node
@@ -163,8 +163,7 @@ const openai = new OpenAI(
 );
 
 async function main() {
-  const runs = await openai.beta.threads.runs.list("thread_abc123");
-  console.log(runs);
+  const run = await openai.beta.threads.runs.retrieve("thread_abc123", "mdb_run_8b425f3bf0a04ca584ad11106d37330c");
 }
 
 main();
