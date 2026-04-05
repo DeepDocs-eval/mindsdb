@@ -19,18 +19,17 @@ Defines the project where the knowledge bases are located. Note that the default
 
 ### Body
 
-<ParamField body='name' type='string' required>
+<ParamField body='knowledge_base.name' type='string' required>
 Name of the knowledge base.
 </ParamField>
 
-<ParamField body='storage' type='string'>
+<ParamField body='knowledge_base.storage' type='object'>
 Underlying vector database that stores the embeddings.
 </ParamField>
 
-<ParamField body='embedding_model' type='string'>
+<ParamField body='knowledge_base.embedding_model' type='object'>
 Defines the embedding model used to embed data in vector representation.
 </ParamField>
-
 <ParamField body='reranking_model' type='string'>
 Defines the reranking model used to rerank the search results by relevance.
 </ParamField>

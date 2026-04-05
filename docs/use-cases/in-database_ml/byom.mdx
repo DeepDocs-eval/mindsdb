@@ -101,7 +101,7 @@ USING
 url.train = 'http://127.0.0.1:8000/my_model/train',
 url.predict = 'http://127.0.0.1:8000/my_model/predict',
 dtype_dict={"number_of_rooms": "categorical", "initial_price": "integer", "rental_price": "integer"},
-format='ray_server';
+format='ray_serve';
 ```
 
 And you can query predictions as usual, either by conditioning on a subset of input colums:
@@ -371,7 +371,7 @@ PREDICT `1`  -- `1` is the target column name
 USING 
 url.predict='http://localhost:5000/invocations', 
 format='mlflow', 
-data_dtype={"0": "integer", "1": "integer"}
+dtype_dict={"0": "integer", "1": "integer"}
 ```
 
 We can now run predictions as usual, by using the `WHERE` statement or joining on a data table with an appropriate schema:
@@ -472,7 +472,7 @@ PREDICT `target`
 USING 
     url.predict='http://localhost:5000/invocations',
     format='mlflow',
-    dtype_dict={"text": "rich text", "target": "binary"};
+dtype_dict={"text": "text", "target": "integer"};
 ```
 
 To get predictions, you can directly pass input data using the `WHERE` clause:

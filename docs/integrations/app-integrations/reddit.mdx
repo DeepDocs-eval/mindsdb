@@ -21,22 +21,11 @@ Before proceeding, ensure the following prerequisites are met:
 
 This handler is implemented using the [PRAW (Python Reddit API Wrapper)](https://praw.readthedocs.io/en/latest/) library, which is a Python package that provides a simple and easy-to-use interface to access the Reddit API.
 
-The required arguments to establish a connection are as follows:
-
 * `client_id` is a Reddit API client ID.
 * `client_secret` is a Reddit API client secret.
+* `username` is your Reddit username.
+* `password` is your Reddit password.
 * `user_agent` is a user agent string to identify your application.
-
-<Tip>
-Here is how to get your Reddit credentials:
-
-1. Go to Reddit App Preferences at https://www.reddit.com/prefs/apps or https://old.reddit.com/prefs/apps/
-2. Scroll down to the bottom of the page and click *Create another app...*
-3. Fill out the form with the name, description, and redirect URL for your app, then click *Create app*
-4. Now you should be able to see the personal user script, secret, and name of your app. Store those as environment variables: `CLIENT_ID`, `CLIENT_SECRET`, and `USER_AGENT`, respectively.
-</Tip>
-
-In order to make use of this handler and connect the Reddit app to MindsDB, the following syntax can be used:
 
 ```sql
 CREATE DATABASE my_reddit
@@ -45,6 +34,8 @@ WITH
     PARAMETERS = {
      "client_id": "YOUR_CLIENT_ID",
      "client_secret": "YOUR_CLIENT_SECRET",
+     "username": "YOUR_USERNAME",
+     "password": "YOUR_PASSWORD",
      "user_agent": "YOUR_USER_AGENT"
     };
 ```

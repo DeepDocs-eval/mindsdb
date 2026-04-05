@@ -23,7 +23,7 @@ None.
 
 ### Response
 
-<ResponseField name="id" type="string" required>  
+<ResponseField name="id" type="integer" required>  
 Unique identifier for the agent.
 </ResponseField>
 
@@ -31,7 +31,7 @@ Unique identifier for the agent.
 The name assigned to the agent.
 </ResponseField>
 
-<ResponseField name="project_id" type="string" required>  
+<ResponseField name="project_id" type="integer" required>  
 The ID of the project where the agent resides.
 </ResponseField>
 
@@ -43,15 +43,15 @@ Timestamp indicating when the agent was created.
 Timestamp indicating when the agent was last updated.
 </ResponseField>
 
-<ResponseField body='data' type='string'>
+<ResponseField name="data" type="object">
 Stores data connected to an agent, including `tables` and `knowledge_bases`.
 </ResponseField>
 
-<ResponseField body='model' type='string'>
+<ResponseField name="model" type="object">
 Stores parameters of the model, including `provider`, `model_name`, and `api_key`.
 </ResponseField>
 
-<ResponseField body='prompt_template' type='string'>
+<ResponseField name="prompt_template" type="string">
 Stores instruction to an agent. This should contain the description of connected data.
 </ResponseField>
 

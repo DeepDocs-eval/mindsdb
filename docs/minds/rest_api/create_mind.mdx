@@ -65,7 +65,7 @@ curl --request POST \
 from minds.client import Client
 
 client = Client("MINDS_API_KEY", "https://mdb.ai/")
-mind = client.minds.create(name='mind_name')
+mind = client.minds.create(name='mind_name', datasources=["datasource_with_all_its_tables"])
 ```
 
 </RequestExample>

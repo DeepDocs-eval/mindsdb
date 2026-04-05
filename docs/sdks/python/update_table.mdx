@@ -5,16 +5,18 @@ sidebarTitle: Update a Table
 
 ## Description
 
-The `update()` function is executed on a table from a data source connected to MindsDB. It updates a table on specified columns.
+The UPDATE statement updates rows in a table from a data source connected to MindsDB.
 
 ## Syntax
 
 Here is the syntax:
 
 ```sql
-my_table.update(table_used_to_update, on=['column1', 'column2', ...])
+UPDATE datasource_name.table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
 ```
 
 <Info>
-Check out the [SQL syntax](/sql/api/update) to better understand how the `update()` function works.
+Check out the [SQL syntax](/sql/api/update) to better understand how the UPDATE statement works.
 </Info>

@@ -119,7 +119,7 @@ while True:
     with client.beta.threads.runs.stream(
       thread_id=thread.id,
       assistant_id=mind.name,
-      event_handler=EventHandler(),
+      assistant_id=mind_name,
     ) as stream:
       stream.until_done()
 

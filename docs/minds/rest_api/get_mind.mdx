@@ -1,6 +1,6 @@
 ---
-title: Get Mind
-sidebarTitle: Get Mind
+title: Get Agent
+sidebarTitle: Get Agent
 ---
 
 This API endpoint retrieves details about a specific Mind using the `GET` method.
@@ -61,31 +61,28 @@ A valid API key must be passed in the `Authorization` header:
 Authorization: Bearer MINDS_API_KEY
 ```
 
-Generate your [API key here](https://mdb.ai/apiKeys).
+Generate your [API key here](https://cloud.mindsdb.com/apikeys).
 
 ### Path Parameters
 
-<ParamField body='mind_name' type='string' required>
+<ParamField body='agent_name' type='string' required>
 
-The name of the Mind you want to retrieve details for.
+The name of the Agent you want to retrieve details for.
 
 </ParamField>
 
 <RequestExample>
 
-```shell Shell
 curl --request GET \
-     --url 'https://mdb.ai/api/projects/mindsdb/minds/mind_name' \
+     --url 'https://cloud.mindsdb.com/api/projects/mindsdb/agents/agent_name' \
      --header 'Authorization: Bearer MINDS_API_KEY'
-```
 
 ```python Python
 from minds.client import Client
 
-client = Client("MINDS_API_KEY", "https://mdb.ai/")
+client = Client("MINDS_API_KEY", "https://cloud.mindsdb.com/")
 
-mind = client.minds.get('mind_name')
-```
+agent = client.agents.get('agent_name')
 
 </RequestExample>
 
